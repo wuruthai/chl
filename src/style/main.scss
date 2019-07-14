@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css?family=Literata&display=swap");
+$light: lightslategray;
+$blue: steelblue;
+$white: white;
+$dark: black;
+$danger: tomato;
+$radius: 4px;
+$form-width: 250px;
+$border: 1px solid $light;
+$transition: all 0.2s ease;
+$font-family: "Literata", serif;
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+.node {
+  cursor: grabbing;
+
+  &-label {
+    font-size: 10px;
+    font-family: $font-family;
+    cursor: copy;
+  }
+
+  .fa {
+    font-size: 15px;
+  }
+
+  circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+}
+
+.overlay {
+  background-color: #eee;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 3px;
+}
+
+.templink {
+  fill: none;
+  stroke: red;
+  stroke-width: 3px;
+}
+
+.ghostCircle.show {
+  display: block;
+}
+
+.ghostCircle,
+.activeDrag .ghostCircle {
+  display: none;
+}
+.range {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.form {
+  position: fixed;
+  z-index: 20;
+  right: calc(50% - #{$form-width / 2});
+  height: min-content;
+  background-color: $white;
+  border: $border;
+  border-top: none;
+  padding: 15px 10px;
+  width: $form-width;
+  font-family: $font-family;
+  -webkit-box-shadow: 0px 7px 18px 0px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 7px 18px 0px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 7px 18px 0px rgba(0, 0, 0, 0.26);
+  transition: $transition;
+
+  &-header {
+    display: flex;
+    flex-direction: column;
+    color: $blue;
+    padding-bottom: 10px;
+    border-bottom: $border;
+
+    &-input {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-icons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 20%;
+    }
+
+    &-title {
+      font-size: 14px;
+      border: none;
+      height: 30px;
+      outline-color: $blue;
+    }
+  }
+
+  &-item {
+    width: 100%;
+    margin-top: 10px;
+
+    &-input {
+      width: inherit;
+      padding-left: 5px;
+      margin-top: 5px;
+    }
+
+    &-info {
+      width: 100%;
+    }
+  }
+
+  &-footer {
+    margin-top: 10px;
+
+    .form-button {
+      width: 100%;
+      height: 30px;
+      border: $border;
+    }
+  }
+}
+
+.input {
+  height: 30px;
+  border: $border;
+  border-radius: $radius;
+}
+.title {
+  margin-left: 5px;
+  padding-right: 5px;
+  color: $blue;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $light;
+  margin-top: 10px;
+
+  .icon {
+    cursor: pointer;
+    padding: 3px;
+  }
+  .selected-icon {
+    color: $white;
+    background-color: $blue;
+  }
+}
+
+.background {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+}
+.background-darken {
+  background-color: rgba(161, 161, 161, 0.342);
+}
+.range {
+  position: absolute;
+  left: 0;
+  top: 0;
+  &-slider {
+  }
+}
+
+.list-complete-item {
+  transition: all 1s;
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-complete-enter, .list-complete-leave-to
+/* .list-complete-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(-250px);
+}
