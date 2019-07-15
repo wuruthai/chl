@@ -33,6 +33,7 @@
           />
         </div>
         <div class="form-content">
+          <div class="form-item"><label class="form-item-label">Add New Node</label></div>
           <div class="form-item">
             <label class="form-item-title title">Child Name</label>
             <input

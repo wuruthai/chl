@@ -3,7 +3,7 @@ $light: lightslategray;
 $blue: steelblue;
 $white: white;
 $dark: black;
-$danger: tomato;
+$green: seagreen;
 $radius: 4px;
 $form-width: 250px;
 $border: 1px solid $light;
@@ -122,6 +122,11 @@ body {
 
     &-info {
       width: 100%;
+    }
+
+    &-label {
+      font-weight: bold;
+      color: $green;
     }
   }
 
