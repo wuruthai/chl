@@ -140,7 +140,13 @@ export default {
         children: []
       });
       this.update(this.root);
-      this.$nextTick(() => (this.selectedNode = null));
+      this.$nextTick(() => {
+        this.selectedNode = null
+        this.form.child = {
+          name: '',
+          icon: ''
+        }
+        });
     },
 
     removeNode() {
