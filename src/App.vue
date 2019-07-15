@@ -2,7 +2,7 @@
   <div id="tree" class="tree">
     <span class="range">
       <label for="range-slider" class="range-label">Tree Animation Timer ( {{ duration }}ms )</label>
-      <input name="range-slider" class="range-slider" type="range" min="1" max="1000" v-model="duration">
+      <input name="range-slider" class="range-slider" type="range" min="1" max="10000" v-model="duration">
     </span>
     <transition name="list-complete">
       <div class="form" v-if="selectedNode && !draggingNode">
