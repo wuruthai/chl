@@ -149,6 +149,7 @@ export default {
       const childIndex = parent.children.indexOf(this.selectedNode);
       parent.children.splice(childIndex, 1);
       this.update(this.root);
+      this.selectedNode = null
     },
     editParent() {
       this.update(this.root);
